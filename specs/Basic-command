@@ -1,0 +1,131 @@
+Last login: Fri May 10 17:53:07 on console
+Anam-MacBook-Pro:~ anamul$ git --version
+git version 2.20.1 (Apple Git-117)
+Anam-MacBook-Pro:~ anamul$ git config --global user.name "Anamul Haque"
+Anam-MacBook-Pro:~ anamul$ git config --global user.email "smanam.haque@gmail.com"
+Anam-MacBook-Pro:~ anamul$ pwd
+/Users/anamul
+Anam-MacBook-Pro:~ anamul$ cd GitTutorial
+Anam-MacBook-Pro:GitTutorial anamul$ pwd
+/Users/anamul/GitTutorial
+Anam-MacBook-Pro:GitTutorial anamul$ git init
+Initialized empty Git repository in /Users/anamul/GitTutorial/.git/
+Anam-MacBook-Pro:GitTutorial anamul$ ls
+conf.js		conf1.js	specs
+Anam-MacBook-Pro:GitTutorial anamul$ git add *
+Anam-MacBook-Pro:GitTutorial anamul$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   conf.js
+	new file:   conf1.js
+	new file:   specs/test1.js
+	new file:   specs/test1.ts
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+Anam-MacBook-Pro:GitTutorial anamul$ git commit - m "First Commit"
+error: pathspec '-' did not match any file(s) known to git
+error: pathspec 'm' did not match any file(s) known to git
+error: pathspec 'First Commit' did not match any file(s) known to git
+Anam-MacBook-Pro:GitTutorial anamul$ git commit -m "First Commit"
+[master (root-commit) 00e36d2] First Commit
+ 4 files changed, 50 insertions(+)
+ create mode 100644 conf.js
+ create mode 100644 conf1.js
+ create mode 100644 specs/test1.js
+ create mode 100644 specs/test1.ts
+Anam-MacBook-Pro:GitTutorial anamul$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+Anam-MacBook-Pro:GitTutorial anamul$ clear
+
+Anam-MacBook-Pro:GitTutorial anamul$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+Anam-MacBook-Pro:GitTutorial anamul$ git remote add origin https://github.com/smanamul-haque/GitDemo.git
+Anam-MacBook-Pro:GitTutorial anamul$ git push origin master
+Username for 'https://github.com': anamul-haque
+Password for 'https://anamul-haque@github.com': 
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/smanamul-haque/GitDemo.git/'
+Anam-MacBook-Pro:GitTutorial anamul$ git push origin master
+Username for 'https://github.com': smanam.haque@gmail.com
+Password for 'https://smanam.haque@gmail.com@github.com': 
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 1.31 KiB | 1.31 MiB/s, done.
+Total 7 (delta 0), reused 0 (delta 0)
+To https://github.com/smanamul-haque/GitDemo.git
+ * [new branch]      master -> master
+Anam-MacBook-Pro:GitTutorial anamul$ pwd
+/Users/anamul/GitTutorial
+Anam-MacBook-Pro:GitTutorial anamul$ git pull origin master
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/smanamul-haque/GitDemo
+ * branch            master     -> FETCH_HEAD
+   00e36d2..3bf420a  master     -> origin/master
+Updating 00e36d2..3bf420a
+Fast-forward
+ specs/test1.js | 2 ++
+ 1 file changed, 2 insertions(+)
+Anam-MacBook-Pro:GitTutorial anamul$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+Anam-MacBook-Pro:GitTutorial anamul$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   specs/test1.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	.DS_Store
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Anam-MacBook-Pro:GitTutorial anamul$ git add *
+Anam-MacBook-Pro:GitTutorial anamul$ git commit -m "added 3 more line from home machine"
+[master 8cfc38a] added 3 more line from home machine
+ 1 file changed, 3 insertions(+)
+Anam-MacBook-Pro:GitTutorial anamul$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 407 bytes | 407.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/smanamul-haque/GitDemo.git
+   3bf420a..8cfc38a  master -> master
+Anam-MacBook-Pro:GitTutorial anamul$ 
