@@ -129,3 +129,194 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/smanamul-haque/GitDemo.git
    3bf420a..8cfc38a  master -> master
 Anam-MacBook-Pro:GitTutorial anamul$ 
+--------------------
+************
+Last login: Fri May 17 09:16:24 on ttys001
+C02SN7KYG8WN:GitDemo i843285$ git
+usage: git [--version] [--help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+C02SN7KYG8WN:GitDemo i843285$ git clone https://github.com/smanamul-haque/GitDemo.git
+Cloning into 'GitDemo'...
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 7 (delta 0), reused 7 (delta 0), pack-reused 0
+Unpacking objects: 100% (7/7), done.
+C02SN7KYG8WN:GitDemo i843285$ clear
+
+C02SN7KYG8WN:GitDemo i843285$ pwd
+/Users/i843285/automation-projects/GitDemo
+C02SN7KYG8WN:GitDemo i843285$ git add *
+fatal: not a git repository (or any of the parent directories): .git
+C02SN7KYG8WN:GitDemo i843285$ git init 
+Initialized empty Git repository in /Users/i843285/automation-projects/GitDemo/.git/
+C02SN7KYG8WN:GitDemo i843285$ git add *
+warning: adding embedded git repository: GitDemo
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint: 
+hint: 	git submodule add <url> GitDemo
+hint: 
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint: 
+hint: 	git rm --cached GitDemo
+hint: 
+hint: See "git help submodule" for more information.
+C02SN7KYG8WN:GitDemo i843285$ wpd
+-bash: wpd: command not found
+C02SN7KYG8WN:GitDemo i843285$ pwd
+/Users/i843285/automation-projects/GitDemo
+C02SN7KYG8WN:GitDemo i843285$ ls
+GitDemo
+C02SN7KYG8WN:GitDemo i843285$ cd GitDemo
+C02SN7KYG8WN:GitDemo i843285$ ls
+conf.js		conf1.js	specs
+C02SN7KYG8WN:GitDemo i843285$ git init
+Reinitialized existing Git repository in /Users/i843285/automation-projects/GitDemo/GitDemo/.git/
+C02SN7KYG8WN:GitDemo i843285$ git add *
+C02SN7KYG8WN:GitDemo i843285$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   specs/test1.js
+
+C02SN7KYG8WN:GitDemo i843285$ git diff
+C02SN7KYG8WN:GitDemo i843285$ git commit -m "added two new lines"
+[master 3bf420a] added two new lines
+ 1 file changed, 2 insertions(+)
+C02SN7KYG8WN:GitDemo i843285$ git remote add origin https://github.com/smanamul-haque/GitDemo.git
+fatal: remote origin already exists.
+C02SN7KYG8WN:GitDemo i843285$ git push origin master
+remote: Permission to smanamul-haque/GitDemo.git denied to anamul-haque-sap.
+fatal: unable to access 'https://github.com/smanamul-haque/GitDemo.git/': The requested URL returned error: 403
+C02SN7KYG8WN:GitDemo i843285$ git remote -v
+origin	https://github.com/smanamul-haque/GitDemo.git (fetch)
+origin	https://github.com/smanamul-haque/GitDemo.git (push)
+C02SN7KYG8WN:GitDemo i843285$ git push origin master
+remote: Permission to smanamul-haque/GitDemo.git denied to anamul-haque-sap.
+fatal: unable to access 'https://github.com/smanamul-haque/GitDemo.git/': The requested URL returned error: 403
+C02SN7KYG8WN:GitDemo i843285$ git config --global --list
+core.excludesfile=/Users/i843285/.gitignore_global
+difftool.sourcetree.cmd=opendiff "$LOCAL" "$REMOTE"
+difftool.sourcetree.path=
+mergetool.sourcetree.cmd=/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+mergetool.sourcetree.trustexitcode=true
+user.name=Haque, Anamul
+user.email=anamul.haque@sap.com
+C02SN7KYG8WN:GitDemo i843285$ clear
+
+C02SN7KYG8WN:GitDemo i843285$ git config --global --list
+core.excludesfile=/Users/i843285/.gitignore_global
+difftool.sourcetree.cmd=opendiff "$LOCAL" "$REMOTE"
+difftool.sourcetree.path=
+mergetool.sourcetree.cmd=/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+mergetool.sourcetree.trustexitcode=true
+user.name=Haque, Anamul
+user.email=anamul.haque@sap.com
+C02SN7KYG8WN:GitDemo i843285$ pwd
+/Users/i843285/automation-projects/GitDemo/GitDemo
+C02SN7KYG8WN:GitDemo i843285$ git config user.name "Anamul Haque"
+C02SN7KYG8WN:GitDemo i843285$ git config user.email "anamul.haque@sap.com"
+C02SN7KYG8WN:GitDemo i843285$ git config --global --list
+core.excludesfile=/Users/i843285/.gitignore_global
+difftool.sourcetree.cmd=opendiff "$LOCAL" "$REMOTE"
+difftool.sourcetree.path=
+mergetool.sourcetree.cmd=/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh "$LOCAL" "$REMOTE" -ancestor "$BASE" -merge "$MERGED"
+mergetool.sourcetree.trustexitcode=true
+user.name=Haque, Anamul
+user.email=anamul.haque@sap.com
+C02SN7KYG8WN:GitDemo i843285$ git push origin master
+remote: Permission to smanamul-haque/GitDemo.git denied to anamul-haque-sap.
+fatal: unable to access 'https://github.com/smanamul-haque/GitDemo.git/': The requested URL returned error: 403
+C02SN7KYG8WN:GitDemo i843285$ git push origin master
+remote: Permission to smanamul-haque/GitDemo.git denied to anamul-haque-sap.
+fatal: unable to access 'https://github.com/smanamul-haque/GitDemo.git/': The requested URL returned error: 403
+C02SN7KYG8WN:GitDemo i843285$ git push origin master
+remote: Permission to smanamul-haque/GitDemo.git denied to anamul-haque-sap.
+fatal: unable to access 'https://github.com/smanamul-haque/GitDemo.git/': The requested URL returned error: 403
+C02SN7KYG8WN:GitDemo i843285$ git push origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 378 bytes | 378.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/smanamul-haque/GitDemo.git
+   00e36d2..3bf420a  master -> master
+C02SN7KYG8WN:GitDemo i843285$ git pull origin master
+remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/smanamul-haque/GitDemo
+ * branch            master     -> FETCH_HEAD
+   3bf420a..8cfc38a  master     -> origin/master
+Updating 3bf420a..8cfc38a
+Fast-forward
+ specs/test1.js | 3 +++
+ 1 file changed, 3 insertions(+)
+C02SN7KYG8WN:GitDemo i843285$ git pull origin master
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 2), reused 5 (delta 2), pack-reused 0
+Unpacking objects: 100% (5/5), done.
+From https://github.com/smanamul-haque/GitDemo
+ * branch            master     -> FETCH_HEAD
+   8cfc38a..ccc79f0  master     -> origin/master
+Updating 8cfc38a..ccc79f0
+Fast-forward
+ specs/Basic-command | 131 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ specs/test1.js      |   1 +
+ 2 files changed, 132 insertions(+)
+ create mode 100644 specs/Basic-command
+C02SN7KYG8WN:GitDemo i843285$ 
+
